@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bookmark</title>
+
+    <link
+      rel="shortcut icon"
+      href="./images/bookmark.png"
+      type="image/x-icon"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="stylesheet" href="./css/mediaquery.css" />
+  </head>
+
+  <body>
+    <header id="home">
+      <div class="container py-4">
+        <h1 class="text-center mb-4 mx-auto">
+          Bookmarker
+          <div class="h1-layer"></div>
+        </h1>
+
+        <div class="myborder mt-4 mb-4"></div>
+
+        <h2 class="text-center mb-4">
+          <span><i class="fa-solid fa-bookmark"></i></span>
+          Bookmark your favorite sites
+          <span><i class="fa-solid fa-bookmark"></i></span>
+        </h2>
+
+        <div>
+          <i class="fa-solid fa-book-bookmark pe-2"></i>
+          <label class="firstLabel mb-1" for="siteNameInput"> Site Name</label>
+
+          <input
+            oninput="checkValidateWebsiteName () ;"
+            placeholder="Bookmark Name"
+            class="form-control mb-3 firstInput"
+            id="siteNameInput"
+            type="text"
+          />
+
+          <p id="myWebsiteNameAlertInput" class="alert alert-danger d-none">
+            Site name must contains at least 3 characters without any space or
+            special characters
+          </p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-link pe-2"></i>
+          <label class="firstLabel mb-1" for="siteUrlInput">Site URL</label>
+          <input
+            onkeyup="checkValidateWebsiteUrl () ;"
+            placeholder="Website URL"
+            class="form-control mb-3 firstInput"
+            id="siteUrlInput"
+            type="text"
+          />
+
+          <p id="myWebsiteUrlAlertInput" class="alert alert-danger d-none">
+            Site URL must contains at least 3 characters and be a valid one such
+            as ***.com
+          </p>
+        </div>
+
+        <div class="content-button text-center">
+          <button
+            onclick="addYourSite();"
+            type="submit"
+            id="addBtn"
+            class="btn btn-danger mt-3 mb-3 pt-2 pb-2 ps-5 pe-5"
+          >
+            submit
+          </button>
+        </div>
+
+        <div id="urlAlertInput" class="alert d-none">
+          <div class="alert-header d-flex justify-content-between">
+            <div class="alert-header-circles d-flex w-50">
+              <span class="circle bg-success me-2"></span>
+              <span class="circle bg-warning me-2"></span>
+              <span class="circle bg-danger me-2"></span>
+            </div>
+
+            <button
+              onclick=" deleteAlert ()"
+              class="btn btn-outline-dark border-0"
+            >
+              <span><i class="fa-solid fa-xmark close fs-3"></i></span>
+            </button>
+          </div>
+
+          <h3>
+            Site Name or Url is not valid, Please follow the rules below :
+          </h3>
+
+          <p>
+            <i class="fa-regular fa-circle-right p-2"></i> Site name must
+            contains at least 3 characters without any space or special
+            characters
+          </p>
+
+          <p>
+            <i class="fa-regular fa-circle-right p-2"></i> Site URL must
+            contains at least 3 characters and be a valid one such as ***.com
+          </p>
+        </div>
+
+        <div class="myborder mt-4 mb-4"></div>
+
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody id="tableContent"></tbody>
+        </table>
+      </div>
+    </header>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
